@@ -5,8 +5,7 @@
  */
 
 import express from "express";
-// import { allDoc } from "./models/Movies.js";
-import { updateById } from "./models/Movies.js";
+import { insertManyDoc } from "./models/Movies1.js";
 import connectDB from "./db/connectDB.js";
 
 const app = express();
@@ -15,8 +14,6 @@ const DATABASE_URL =
   process.env.DATABASE_URL || "mongodb://127.0.0.1:27017/movies";
 
 connectDB(DATABASE_URL);
-// allDoc();
-// singleDoc();
-updateById("John Wick");
+insertManyDoc();
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
